@@ -1,0 +1,42 @@
+[versions]
+jimmer = "0.0.9"
+kotlin = "1.9.23"
+ktor = "2.3.9"
+ksp = "1.9.23-1.0.20"
+coroutines = "1.8.0"
+serialization = "1.6.3"
+wrappers = "1.0.0-pre.729"
+logback = "1.5.3"
+postgresql = "42.7.3"
+hikari = "5.1.0"
+koin = "3.5.6"
+
+[libraries]
+ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
+ktor-server-cors = { module = "io.ktor:ktor-server-cors", version.ref = "ktor" }
+ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
+ktor-serialization-jsackson = { module = "io.ktor:ktor-serialization-jackson", version.ref = "ktor" }
+ktor-server-config-yaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor" }
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+kotlin-wrappers = { module = "org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom", version.ref = "wrappers" }
+kotlin-wrappers-react = { module = "org.jetbrains.kotlin-wrappers:kotlin-react" }
+kotlin-wrappers-react-dom = { module = "org.jetbrains.kotlin-wrappers:kotlin-react-dom" }
+kotlin-wrappers-emotion = { module = "org.jetbrains.kotlin-wrappers:kotlin-emotion" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+hikari = { module = "com.zaxxer:HikariCP", version.ref = "hikari" }
+koin = { module = "io.insert-koin:koin-ktor", version.ref = "koin" }
+
+[bundles]
+api = ['ktor-server-core', 'ktor-server-netty', 'ktor-server-cors', 'ktor-server-content-negotiation', 'ktor-serialization-jsackson', 'ktor-server-config-yaml', 'logback', 'postgresql', 'hikari', 'koin']
+app = ['kotlinx-coroutines-core', 'kotlinx-serialization-json', 'kotlin-wrappers-react', 'kotlin-wrappers-react-dom', 'kotlin-wrappers-emotion']
+
+[plugins]
+jimmer = { id = "cn.enaium.jimmer.gradle", version.ref = "jimmer" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

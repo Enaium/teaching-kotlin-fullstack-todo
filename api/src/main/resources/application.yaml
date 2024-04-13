@@ -1,0 +1,11 @@
+ktor:
+  deployment:
+    port: 8080
+  application:
+    modules:
+      - cn.enaium.TodoKt.module
+jdbc:
+  driver: 'org.postgresql.Driver'
+  url: 'jdbc:postgresql://localhost:5432/postgres?currentSchema=todo'
+  username: 'postgres'
+  password: 'postgres'
